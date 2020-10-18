@@ -1,5 +1,5 @@
 /*
-This is the cuda version of 2d-convolution with multiple thread blocks.
+This is the cuda version of 2d-convolution with multiple thread blocks (270ms).
 In this problem, our output with size of [N, F, H_, W_];
 So we divides the task into (H_ * W_) blocks, and each nlock has (N * F) threads.
 */
@@ -19,7 +19,6 @@ void Conv2D_cuda_optim(Matrix &out, Matrix fm, Matrix kn) {
     out.cpu();
 }
 
-
 __global__ void conv2d_cuda_optim_kernel(float *out_matr, float *fm_matr, float *kn_matr,
                                     int in_channel, int out_channel, int height, int width, 
                                     int ksize_x, int ksize_y) {
@@ -37,6 +36,7 @@ __global__ void conv2d_cuda_optim_kernel(float *out_matr, float *fm_matr, float 
                 row*(width - ksize_y + 1) + col] = cell_value;
 }
 
+
 int main() {
     //Initialize Matrix
     Matrix fm(N, C, H, W), kn(F, C, K, K);
@@ -51,9 +51,10 @@ int main() {
     st = clock();
     Conv2D_cuda_optim(out, fm, kn);
     ed = clock();
-    printf("It takes %f ms to calculate the convolution...", (double)(ed-st)/CLOCKS_PER_SEC * 1000);
+    printf("It takes %f ms to calculate the convolution...  ", (double)(ed-st)/CLOCKS_PER_SEC * 1000);
     if (out == truth)
         printf("Result is correct! (%f)\n", *out.get(1,2,3,4));
     else
         printf("Result is wrong! (%f)\n", *out.get(1,2,3,4));
 }
+

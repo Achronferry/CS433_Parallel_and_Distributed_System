@@ -1,0 +1,59 @@
+%!TEX program = Xelatex
+\documentclass{article}
+\usepackage{amsmath,amscd,amsbsy,amssymb,latexsym,url,bm,amsthm}
+\usepackage{epsfig,graphicx,subfigure}
+\usepackage{enumitem,balance,mathtools}
+\usepackage{wrapfig}
+\usepackage{mathrsfs, euscript}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[ruled,lined,boxed,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+\usepackage[UTF8]{ctex}
+\usepackage{setspace}
+\usepackage{color,xcolor}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem*{solution}{Solution}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\postscript}[2]
+{\setlength{\epsfxsize}{#2\hsize}
+	\centerline{\epsfbox{#1}}}
+\renewcommand{\baselinestretch}{1.0}
+
+\setlength{\oddsidemargin}{-0.365in}
+\setlength{\evensidemargin}{-0.365in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{10.1in}
+\setlength{\textwidth}{7in}
+
+% ------ adjust it according to the specific circumstances ----- %
+\title{Project 1: }
+\author{杨晨宇}
+\date{517030910386}
+% ---------------------------------------------------------------%
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\lstset{
+	numbers=left,                        % 设置行号
+	columns=fullflexible,
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	tabsize=4,                       % 把tab扩展为4个空格，默认是8个太长
+	keywordstyle=\color{blue},
+	commentstyle=\color{mygreen},    % 设置注释颜色	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	frame=single,                        % 设置有边框
+	language=C++,
+}
+
+\begin{document}
+	
+\maketitle
+	
+
+\end{document}

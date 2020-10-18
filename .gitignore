@@ -34,3 +34,12 @@
 .vs
 *.sln
 Debug
+ 
+# latex
+*.jpg
+*.jpeg
+*.png
+*.gz
+*.log
+*.out
+*.aux

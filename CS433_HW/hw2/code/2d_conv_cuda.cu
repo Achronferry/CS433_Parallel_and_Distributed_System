@@ -11,7 +11,6 @@ __global__ void conv2d_cuda_kernel(float *out_matr, float *fm_matr, float *kn_ma
                                     int ksize_x, int ksize_y);
 
 void Conv2D_cuda(Matrix &out, Matrix fm, Matrix kn) {
-
     fm.cuda(); kn.cuda(); out.cuda();
     conv2d_cuda_kernel<<<fm.d1,1>>>(out.element, fm.element, kn.element, 
                                             kn.d2, kn.d1, fm.d3, fm.d4, kn.d3, kn.d4);
